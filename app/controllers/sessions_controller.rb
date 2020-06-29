@@ -1,11 +1,10 @@
 class SessionsController < ApplicationController
   def new
     @user = User.new
-    @users = User.all
   end
 
   def create
-    user = User.find_by(name: params[:user][:email])
+    user = User.find_by(email: params[:email])
     authenticated = user.authenticate(params[:password])
     if authenticated
       session[:user_id] = user.id
