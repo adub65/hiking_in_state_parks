@@ -9,8 +9,8 @@ class StateParksController < ApplicationController
   end
 
   def create
-    state_park = StatePark.create(state_park_params)
-    redirect_to state_park_path(state_park)
+    @state_park = StatePark.create(state_park_params)
+    redirect_to state_park_path(@state_park)
   end
 
 private
