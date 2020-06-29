@@ -1,5 +1,9 @@
 class HikesController < ApplicationController
 
+  def new
+    @hike = Hike.new
+  end
+
 private
 
   def hike_params
