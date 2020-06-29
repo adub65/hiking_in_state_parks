@@ -1,0 +1,11 @@
+<%= form_for @state_park do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br>
+
+<%= f.label :address %>
+<%= f.text_field :address %><br>
+
+<%= f.label :county %>
+<%= f.text_field :county %>
+
+<%= f.submit "Create a New Park" %>
