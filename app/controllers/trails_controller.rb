@@ -2,6 +2,7 @@ class TrailsController < ApplicationController
 
   def new
     @trail = Trail.new
+    @state_park = StatePark.find(params[:state_park_id])
   end
 
 private

@@ -1,7 +1,7 @@
 class StateParksController < ApplicationController
 
   def index
-    @state_parks = StateParks.All
+    @state_parks = StateParks.all
   end
 
   def new
