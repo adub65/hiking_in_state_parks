@@ -1,3 +1,14 @@
 <h1><%= @state_park.name %></h1>
-<h2><%= @state_park.address %></h2>
-<h2><%= @state_park.county %></h2>
+<p><%= @state_park.address %></p>
+<p><%= @state_park.county %> County</p>
+
+<h3>Trails at this Park</h3>
+<%= "No Trails Yet" if @state_park.trails.empty? %><br><br>
+
+<%= link_to "Add a New Trail", new_state_park_trail_path(@state_park) %>
+
+<ol>
+  <% @state_park.trails.each do |trail| %>
+      <p><%= link_to trail.name, state_park_trail_path(trail) %><br></p>
+  <% end %>
+</ol>

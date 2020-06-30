@@ -5,6 +5,12 @@ class TrailsController < ApplicationController
     @state_park = StatePark.find(params[:state_park_id])
   end
 
+  def create
+    @trail = Trail.create(trail_params)
+    redirect_to state_park_trail(@trail)
+  end
+
+
 private
 
   def trail_params

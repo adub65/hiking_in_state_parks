@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :state_parks, only: [:new, :create, :show, :index] do
     resources :trails, only: [:new, :create, :show, :index]
   end
-  
-  resources :hikes, only: [:new, :create]
+
+  resources :hikes, only: [:new, :create, :show]
 
   get "/signin", to: "sessions#new"
   post "/sessions", to: "sessions#create"

@@ -4,6 +4,11 @@ class HikesController < ApplicationController
     @hike = Hike.new
   end
 
+  def create
+    @hike = Hike.create(hike_params)
+    redirect_to hike_path(@hike)
+  end
+
 private
 
   def hike_params

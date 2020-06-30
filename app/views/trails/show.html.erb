@@ -1,0 +1,6 @@
+<h1> <%= @trail.name %></h1>
+
+<h3>Hikes You've Done on <%= @trail.name %></h3>
+<%= "No Hikes Yet" if @trail.hikes.empty? %><br><br>
+
+<%= link_to "Add a New Hike", new_hike_path(@trail) %>

@@ -5,6 +5,6 @@
 <h2>Select a Park Below</h2>
   <ol>
     <% @state_parks.each do |state_park| %>
-      <%= link_to state_park.name, state_park_path(state_park) %>
+      <li><%= link_to state_park.name, state_park_path(state_park) %></li>
     <% end %>
   </ol>

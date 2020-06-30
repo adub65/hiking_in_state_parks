@@ -1,14 +1,14 @@
 <%= form_for([@state_park, @trail]) do |f| %>
 <%= f.label :name %>
-<%= f.text_field :name %><br>
+<%= f.text_field :name %><br><br>
 
 <%= f.label :distance %>
-<%= f.text_field :distance %><br>
+<%= f.text_field :distance %><br><br>
 
 <%= f.label :difficulty %>
-<%= f.text_field :difficulty %>
+<%= f.text_field :difficulty %><br><br>
 
-<%= f.collection_select :trail_composition, [["Gravel", "gravel"], ["Dirt", "dirt"], ["Paved", "paved"]], prompt: "Please select the material of the trail" %>
+<%= f.select :trail_composition, [["Gravel", "gravel"], ["Dirt", "dirt"], ["Paved", "paved"]], prompt: "Please select the material of the trail" %><br><br>
 
 <%= f.submit "Create a New Trail" %>
 
