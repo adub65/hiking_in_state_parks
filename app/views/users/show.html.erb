@@ -1,16 +1,10 @@
-<h1> <%= @user.full_name %>'s Hiking Profile</h1>
-
-<h2>Parks You Have Hiked In</h2>
-<%= "No Hikes in Any Parks" if @user.state_parks.empty? %><br><br>
-
-<%= link_to "Add a Park You Hiked In", new_state_park_path %>
+<h1><%= @user.full_name %>'s Hiking Profile</h1>
 
 <ol>
-  <% @user.state_parks.each do |state_park| %>
-    <li>
-      <p><%= link_to state_park.name, state_park_path(state_park) %></p><br>
-    </li>
-  <% end %>
+  <% @user.hikes.each do |hike| %>
+    <li>Hiked <%= hike.duration %> hours on <%= hike.date_hiked %>.</li><br>
 </ol>
+
+<%= link_to "See all Parks", state_parks_path %><br><br>
 
 <%= button_to "Log Out", logout_path %>

@@ -5,8 +5,9 @@ class HikesController < ApplicationController
   end
 
   def create
-    @hike = Hike.create(hike_params)
-    redirect_to hike_path(@hike)
+    @hike = Hike.new(hike_params)
+    @hike.user = session[:user_id]
+    redirect_to user_path(user)
   end
 
 private

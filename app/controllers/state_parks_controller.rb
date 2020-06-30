@@ -1,5 +1,4 @@
 class StateParksController < ApplicationController
-
   def index
     @state_parks = StatePark.all
   end
@@ -13,10 +12,8 @@ class StateParksController < ApplicationController
   end
 
   def create
-    @state_park = StatePark.create(state_park_params)
-    @trail = @state_park.trail
-    
-    redirect_to state_park_trail_path(@state_park, @trail)
+    state_park = StatePark.create(state_park_params)
+    redirect_to state_park_path(state_park)
   end
 
 private

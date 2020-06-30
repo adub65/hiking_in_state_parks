@@ -8,6 +8,7 @@ class TrailsController < ApplicationController
   def create
     trail = Trail.new(trail_params)
     trail.state_park = state_park
+    binding.pry
     trail.save
     redirect_to state_park_trail_path(state_park, trail)
   end
@@ -15,7 +16,7 @@ class TrailsController < ApplicationController
   def show
     @trail = Trail.find(params[:id])
   end
-  
+
 private
 
   def trail_params
