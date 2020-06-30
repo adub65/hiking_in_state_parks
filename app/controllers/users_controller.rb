@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :require_login, only: %i[new create]
+
   def new
     @user = User.new
   end
@@ -12,7 +14,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    redirect_to root_path unless session[:user_id].present?
   end
 
 private
