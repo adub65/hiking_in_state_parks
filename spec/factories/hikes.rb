@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :hike do
-    duration "2"
-    date_hiked "02/05/2020"
+    duration { "2" }
+    date_hiked { Date.today }
     trail
     user
   end
