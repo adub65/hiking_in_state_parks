@@ -1,4 +1,4 @@
-<%= form_for @hike do |f| %>
+<%= form_for([@state_park, @trail, @hike]) do |f| %>
 <%= f.label :duration %>
 <%= f.text_field :duration %><br>
 
