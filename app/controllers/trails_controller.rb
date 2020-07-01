@@ -8,8 +8,12 @@ class TrailsController < ApplicationController
   def create
     @trail = Trail.new(trail_params)
     @trail.state_park = @state_park
-    @trail.save
-    redirect_to state_park_trail_path(@trail, @state_park)
+    if @trail.save
+      redirect_to state_park_trail_path(@trail, @state_park)
+    else
+      flash[:error] = @trail.errors.full_messages.join(". ")
+      render :new
+    end
   end
 
   def show

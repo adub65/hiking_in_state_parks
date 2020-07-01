@@ -9,8 +9,12 @@ class HikesController < ApplicationController
     @hike = Hike.new(hike_params)
     @hike.trail_id = params[:trail_id]
     @hike.user_id = session[:user_id]
-    @hike.save
-    redirect_to user_path(@hike.user)
+    if @hike.save
+      redirect_to user_path(@hike.user)
+    else
+      flash[:error] = @hike.errors.full_messages.join(". ")
+      render :new
+    end
   end
 
 private
@@ -20,10 +24,10 @@ private
   end
 
   def trail
-    @trail = Trail.find(params[:trail_id])
+    @trail ||= Trail.find(params[:trail_id])
   end
 
   def state_park
-    @state_park = StatePark.find(params[:state_park_id])
+    @state_park ||= StatePark.find(params[:state_park_id])
   end
 end
