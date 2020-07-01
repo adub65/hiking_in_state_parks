@@ -1,9 +1,9 @@
 <%= form_for([@state_park, @trail, @hike]) do |f| %>
 <%= f.label :duration %>
-<%= f.text_field :duration %><br>
+<%= f.number_field :duration, step: :any %><br>
 
 <%= f.label :date_hiked %>
-<%= f.text_field :date_hiked %><br>
+<%= f.date_field :date_hiked %><br>
 
 <%= f.submit "Create a New Hike" %>
 

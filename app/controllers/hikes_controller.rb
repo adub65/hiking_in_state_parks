@@ -7,22 +7,23 @@ class HikesController < ApplicationController
 
   def create
     @hike = Hike.new(hike_params)
-    binding.pry
-    @hike.user = session[:user_id]
-    redirect_to user_path(user)
+    @hike.trail_id = params[:trail_id]
+    @hike.user_id = session[:user_id]
+    @hike.save
+    redirect_to user_path(@hike.user)
   end
 
 private
 
   def hike_params
-    params.require(:hike).permit(:duration, :date_hiked, :user_id, :trail_id)
+    params.require(:hike).permit(:duration, :date_hiked, :trail_id)
   end
 
   def trail
-    @trail ||= Trail.find(params[:trail_id])
+    @trail = Trail.find(params[:trail_id])
   end
 
   def state_park
-    @state_park ||= StatePark.find(params[:state_park_id])
+    @state_park = StatePark.find(params[:state_park_id])
   end
 end
