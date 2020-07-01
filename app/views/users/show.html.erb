@@ -1,11 +1,5 @@
 <h1><%= @user.full_name %>'s Hiking Profile</h1>
 
-<ol>
-  <% @user.hikes.map do |hike| %>
-    <li>Hiked <%= hike.duration %> hours on <%= hike.date_hiked %>.</li><br>
-  <% end %>
-</ol>
-
-<%= link_to "See all Parks", state_parks_path %><br><br>
+<%= link_to "See all Parks", state_parks_path %>
 
 <%= button_to "Log Out", logout_path %>

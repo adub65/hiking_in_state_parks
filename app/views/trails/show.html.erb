@@ -1,4 +1,14 @@
 <h1>Hikes You've Done on <%= @trail.name %></h1>
 <%= "No Hikes Yet" if @trail.hikes.empty? %><br><br>
 
-<%= link_to "Add a New Hike", new_state_park_trail_hike_path(@state_park, @trail) %>
+<ol>
+  <% @trail.hikes.map do |hike| %>
+    <li>Hiked <%= hike.duration %> hours on <%= hike.date_hiked.strftime("%m-%d-%Y") %>.</li>
+  <% end %>
+</ol>
+
+<%= link_to "Add a New Hike", new_state_park_trail_hike_path(@state_park, @trail) %><br><br>
+
+   <%= link_to "Back To Profile Page", user_path %>   /   <%= link_to "Back to State Park Page", state_park_path %><br><br>
+
+   <%= button_to "Log Out", logout_path %>
