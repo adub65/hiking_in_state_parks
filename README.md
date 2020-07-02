@@ -6,3 +6,5 @@ To launch the app, type `rails s` in the terminal. Once a rails server is runnin
 From the user's profile page, click on `See All Parks` to view all the state parks that have been hiked in so far. From this State Park page, either click on a park or create a new one.
 
 When a park is either created or clicked on, the user can then view the trials at that park or create a new trail. The next screen prompts to create a hike on that trail. A hike consists of the amount of time hike on the trail and the date.
+
+Please enjoy!
