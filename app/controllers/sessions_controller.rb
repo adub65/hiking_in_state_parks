@@ -7,13 +7,15 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(email: params[:email])
-    authenticated = @user.authenticate(params[:password])
-    if authenticated
+    if @user.nil?
+      flash[:error] = "Could not find that email."
+
+      redirect_to root_path
+    else
+      @user.authenticate(params[:password])
       session[:user_id] = @user.id
 
       redirect_to user_path(@user)
-    else
-      redirect_to root_path
     end
   end
 

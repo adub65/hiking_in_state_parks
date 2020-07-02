@@ -2,7 +2,7 @@
 <%= button_to "Log Out", logout_path %>
 
 <h2><%= @trail.name %></h2>
-<h3>You've hiked this trail <%= @trail.hikes.count %> times.</h3>
+<h3>You've hiked this trail <%= @trail.hikes_for(@user).count %> times.</h3>
 <%= "You haven't hiked on this trail yet." if @trail.hikes.empty? %>
 <ol>
 

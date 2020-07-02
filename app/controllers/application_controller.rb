@@ -3,14 +3,14 @@ class ApplicationController < ActionController::Base
 
 private
 
+  def logged_in?
+    session[:user_id].present?
+  end
+
   def require_login
     return if logged_in?
 
     flash[:error] = "You must be logged in first."
     redirect_to root_path
-  end
-
-  def logged_in?
-    session[:user_id].present?
   end
 end
