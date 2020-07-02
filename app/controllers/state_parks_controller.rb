@@ -1,6 +1,7 @@
 class StateParksController < ApplicationController
   def index
     @state_parks = StatePark.all
+    @user = session[:user_id]
   end
 
   def new
@@ -9,6 +10,7 @@ class StateParksController < ApplicationController
 
   def show
     @state_park = StatePark.find(params[:id])
+    @user = session[:user_id]
   end
 
   def create

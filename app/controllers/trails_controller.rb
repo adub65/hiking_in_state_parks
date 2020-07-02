@@ -18,6 +18,7 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
 private

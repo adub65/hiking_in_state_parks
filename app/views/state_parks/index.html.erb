@@ -1,12 +1,11 @@
-<h1>PA State Parks</h1>
+<%= link_to "Back to User Profile", user_path(@user) %><br><br>
+  <%= button_to "Log Out", logout_path %>
 
-<%= link_to "Submit a New Park", new_state_park_path %><br><br>
+<h1>Welcome to PA State Parks</h1>
+<h3>Select a Park Below, or <%= link_to "Submit a New Park", new_state_park_path %><br><br></h3>
 
-<h2>Select a Park Below</h2>
   <ol>
     <% @state_parks.each do |state_park| %>
       <li><%= link_to state_park.name, state_park_path(state_park) %></li>
     <% end %>
   </ol><br>
-
-  <%= button_to "Log Out", logout_path %>

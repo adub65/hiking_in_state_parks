@@ -6,24 +6,13 @@ RSpec.describe User do
     expect(build(:user)).to be_valid
   end
 
-  subject {
-        described_class.new(
-            full_name: "Joe Wilson",
-            email: "joe@example.com",
-            password: "Example456!"
-            )
-  }
-  it "is valid" do
-    expect(subject).to be_valid
-  end
-
   it "is not valid without full name" do
-    subject.full_name = nil
-    expect(subject).to_not be_valid
+    expect(build(:user, full_name: nil)).to_not be_valid
   end
 
   it "is not valid when email is non-unique" do
-     subject.email = nil
-    expect(subject).to_not be_valid
+    email1 = create(:user, email: "aw@email.com")
+    email2 = build(:user, email: "aw@email.com")
+    expect(email2).to_not be_valid
   end
 end

@@ -1,3 +1,7 @@
+<%= link_to "Back to User Profile", user_path(@user) %><br><br>
+<%= button_to "Log Out", logout_path %>
+
+
 <h1><%= @state_park.name %></h1>
 <h2><%= @state_park.address %></h2>
 <h2><%= @state_park.county %> County</h2>
@@ -13,5 +17,3 @@
       <p><%= link_to trail.name, state_park_trail_path(@state_park, trail) %><br></p>
   <% end %>
 </ol><br>
-
-<%= button_to "Log Out", logout_path %>
