@@ -10,7 +10,7 @@ class HikesController < ApplicationController
     @hike.trail_id = params[:trail_id]
     @hike.user_id = session[:user_id]
     if @hike.save
-      redirect_to user_path(@hike.user)
+      redirect_to state_park_trail_path(@state_park, @trail)
     else
       flash[:error] = @hike.errors.full_messages.join(". ")
       render :new

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :state_parks, only: [:new, :create, :show, :index] do
     resources :trails, only: [:new, :create, :show, :index] do
-      resources :hikes, only: [:new, :create, :show]
+      resources :hikes, only: [:new, :create]
     end
   end
 

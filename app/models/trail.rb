@@ -8,5 +8,4 @@ class Trail < ApplicationRecord
   scope :easy_trail, -> { where(difficulty: "Easy") }
   scope :medium_trail, -> { where(difficulty: "Medium") }
   scope :hard_trail, -> { where(difficulty: "Hard") }
-
 end
