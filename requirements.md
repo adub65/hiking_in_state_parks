@@ -15,10 +15,10 @@ Requirements:
 - [x] Includes nested resource form (recipes/1/ingredients/new)
 - [x] Includes form display of validation errors
 - [x] Includes Unit tests all of your models
-- [ ] Includes at least one type of Integration test (e.g. controller, request, feature, system)
+- [x] Includes at least one type of Integration test (e.g. controller, request, feature, system)
 - [x] Use FactoryBot to build instances of your models in your tests
-- [ ] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
-- [ ] Includes a `README.md` with an application description and installation guide
+- [x] Conforms to Nitro Ruby linting rules (running `rubocop` returns 0 offenses)
+- [x] Includes a `README.md` with an application description and installation guide
 
 Confirm:
 - [ ] The application is pretty DRY

@@ -1,5 +1,5 @@
 <h1>Hikes You've Done on <%= @trail.name %></h1>
-<%= "No Hikes Yet" if @trail.hikes.empty? %><br><br>
+<%= "You haven't logged a hike on this trail yet." if @trail.hikes.empty? %><br><br>
 
 <ol>
   <% @trail.hikes.map do |hike| %>
